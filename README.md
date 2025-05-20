@@ -3,3 +3,5 @@
 ## Important Links
 
 * [Course Syllabus](SYLLABUS.md)
+* Resources
+    * [W3Schools SQL tutorial](https://www.w3schools.com/sql/)
