@@ -68,8 +68,8 @@ Item | Percent
 ---- | -------
 Attendance | 5%
 Individual Assignments | 25%
-Major Group Project | 60%
-Research Activity | 10%
+Major Group Project | 55%
+Research Activity | 15%
 
 This course will use the following minimum scores for each grade:
 
@@ -161,7 +161,7 @@ After this step, you can also choose to reach out to me and I will be happy to w
 
 ### Electronic Recording of Lectures and Materials
 
-> Note: Unless there are objections, we will be recording each Zoom lecture, and those lectures will be made available to you during the course for your review. This policy still applies to any *further* use of recordings, such as downloading or sharing of lectures. If you are unsure as to whether your use of a class recording is acceptable, please ask me directly.
+> Note: Unless there are objections, we will be recording each Zoom lecture, and those lectures will be made available to you during the course for your review. This policy still applies to any *further* use of recordings beyond for your own personal review, such as downloading or sharing of lectures. If you are unsure as to whether your use of a class recording is acceptable, please ask me directly.
 
 University policy states that students are not permitted to make unauthorized electronic recordings of lectures using personally owned recording devices (e.g., smartphone, iPad, computer, digital recorder) unless prior permission from the instructor is obtained, and there are no objections from other students.
 
