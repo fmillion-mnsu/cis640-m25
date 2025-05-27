@@ -23,9 +23,9 @@ A few examples of scenarios you can build:
 
 Your project will consist of all of the following:
 
-* A written report containing a description of your project, including data flow diagrams, ERDs, data dictionaries, etc. as applicable and appropriate. This is sometimes known as a Requirements Analysis document.   
+* A written report containing a description of your project, including data flow diagrams, ERDs, data dictionaries, etc. as applicable and appropriate. This is sometimes known as a Requirements Analysis document.
   * Part of this requirements analysis process is to determine the *most appropriate* database for a given type of data. For example, while you could store customer orders in a time-series database, time-series databases are not the optimal choice for that type of data, since the types of queries that time-series databases excel at - specifically aggregating data based on timestamps - would not be as useful for tasks such as reviewing individual orders.
-* Implementation of the data model using **at least three (3) different types of database server**, one of which must be a traditional relational database (e.g. Microsoft SQL Server). 
+* Implementation of the data model using **at least three (3) different types of database server**, one of which must be a traditional relational database (e.g. Microsoft SQL Server).
 * Specify **six (6) business questions** that you can answer with your data model:
   * At least **two (2)** cases *must* involve *accessing and aggregating data from at least two different servers*.
   * At least **two (2)** cases *must* involve advanced SQL programmability - e.g. stored procedures, functions or views.
@@ -39,7 +39,7 @@ Your project will consist of all of the following:
 While you should be focusing on building a realistic data model within the domain you choose, your **data model** must include the following:
 
 * A minimum of **five (5) distinct entities**. An *entity* in this case is defined as a single logical set of data. Examples of entities are "customer", "product", and "order".
-* At least one aspect of the database that involves **temporal (time-based) data**. 
+* At least one aspect of the database that involves **temporal (time-based) data**.
   * Note that you do not necessarily need to use a time-series database to store time-based data. Only use a time-series database if the types of queries you will be doing on the data would be optimized by a time-series database.
 * You must have at least one **one-to-many** and one **many-to-many** relationship among your data elements.
   * Note that this does not need to be within a single database server! For example, if a product belongs to one manufacturer, and you store manufacturer data in a relational database but product data in a document NoSQL database, that still counts as a one-to-many relationship and can be illustrated as such.
@@ -51,7 +51,7 @@ You will need **sample data** for your project. You have a few options:
   * If you use an open dataset, you should avoid using the data "as-is". You should instead use either a script or an automation task of some kind to perform an **ETL** (extract, transform, load) operation on your sample dataset, in order to mold its data into your data model. In other words, **don't build your data model around the dataset**; instead, use ETL techniques to conform the dataset to your model.
 
 > Note that while you will likely be working with small datasets as a proof of concept, you should be taking care to consider the performance and scalability of your application with larger volumes of data. For example, a slow query might not "feel" slow if performed on only 1,000 records, but that same query might take long enough to cause timeouts when presented with 1,000,000 rows. Consider realistic live scenarios for your system and ensure that you have demonstrated how you have attempted to approach these concerns. (For example, creating appropriate indexes to speed up query processing would be a good idea.) If your approach would fall outside the scope of the project (e.g. configuring automated scale-up/scale-out) then you do not have to implement it, but you should document and explain how the strategy in question will help to maintain performance of the application when under a realistic load.
- 
+
 ### Specifics: Data processing application
 
 Your Python (or other language) application serves as a data integration harness - this means that it *demonstrates* how the databases work together to solve business problems and provide insight. There are no strict requirements for user interface - you may write one script overall with options, or one script per business question.
@@ -66,7 +66,7 @@ Note that this application is *separate* from the dashboard you will build using
 
 ## Logistics
 
-For this project, **you will be working in a group of 3 students.** Groups will be assigned by me. 
+For this project, **you will be working in a group of 3 students.** Groups will be assigned by me.
 
 Of particular importance is that I will be providing you access to cloud servers appropriate for your data project. To facilitate this process, **your group must submit a brief draft of your project idea, including which servers you require, by May 27th before the start of class.** Once I have approved your project idea, I will provision and provide you with access credentials for the servers you have selected.
 
@@ -86,15 +86,15 @@ I can provide you access to all of the following servers:
 * Graph database: Neo4J
 * Caching database: Redis, Memcached
 
-Other databases can be made available but may take longer to configure and deploy. 
+Other databases can be made available but may take longer to configure and deploy.
 
-### Agile methodology 
+### Agile methodology
 
-We will use a simplified and slightly modified version of the **Agile software development strategy**. If you are not familiar with Agile development, [the Agile Software Development Manifesto](https://agilemanifesto.org/) is a good place to start. 
+We will use a simplified and slightly modified version of the **Agile software development strategy**. If you are not familiar with Agile development, [the Agile Software Development Manifesto](https://agilemanifesto.org/) is a good place to start.
 
-Given the short length of this course, you will engage in **four (4) weekly sprints**, with the first starting the second week of the course (the week of May 26th). 
+Given the short length of this course, you will engage in **four (4) weekly sprints**, with the first starting the second week of the course (the week of May 26th).
 
-You must adopt some strategy for implementing and managing the Agile strategy. I strongly recommend [Trello](https://trello.com/), which offers a free tier. You can use Trello to create cards for task assignment, as a simple knowledge base, and more. 
+You must adopt some strategy for implementing and managing the Agile strategy. I strongly recommend [Trello](https://trello.com/), which offers a free tier. You can use Trello to create cards for task assignment, as a simple knowledge base, and more.
 
 For each **sprint**, you will:
 
@@ -108,11 +108,11 @@ At least **twice per week**, you will have a **stand-up meeting**. The purpose o
 * What will I work on now?
 * What (if anything) do I need help with / do I have any "blockers"
 
-Stand-up meetings are intended to be extremely brief - even in larger teams, 15 minutes is a typical upper limit on time. For small teams of 3 students, stand-up meetings will probably take 5 minutes at most. 
+Stand-up meetings are intended to be extremely brief - even in larger teams, 15 minutes is a typical upper limit on time. For small teams of 3 students, stand-up meetings will probably take 5 minutes at most.
 
 Document your stand-up meetings - it would be OK if you simply use Zoom transcription or AI summarization to make this easy.
 
-The documentation you provide related to the Agile methodology for your project must include details on individual team member contributions and details on your sprint planning and retrospective meetings. 
+The documentation you provide related to the Agile methodology for your project must include details on individual team member contributions and details on your sprint planning and retrospective meetings.
 
 ### Weekly task outline
 

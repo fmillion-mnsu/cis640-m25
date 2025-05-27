@@ -6,7 +6,7 @@ While this Python code would not make for a secure *production* blockchain, it m
 
 ## blockchain.py
 
-The `blockchain.py` file is a **library** that implements a simple blockchain as a pair of classes: `Block` and `Blockchain`. 
+The `blockchain.py` file is a **library** that implements a simple blockchain as a pair of classes: `Block` and `Blockchain`.
 
 The `Block` class represents an individual block on the blockchain. Recall that a blockchain is simply a "chain" of data blobs, where each data entry is cryptographically linked to the previous entry. Verifying the chain integrity involves working forward from the block immediately following the initial "genesis" block and verifying blocks forward until the current block is reached. This process can be relatively quickly repeated and done by anyone with a copy of the entire chain at any time. **The cryptographic security of the hashes gives blockchain its immutability and security** - a blockchain does not, on its own, *prevent* tampering of data, but it *does* prevent *invisible tampering* with data - that is, a pure blockchain can *identify* that data has been tampered with, but it cannot, on its own, *repair* that data.
 
@@ -18,6 +18,6 @@ The `Blockchain` class implements a full blockchain using `Block` objects. You c
 
 ## example.py
 
-`example.py` is a runnable script that shows you an example of the blockchain in action. Some data is added and then tampering is attempted. 
+`example.py` is a runnable script that shows you an example of the blockchain in action. Some data is added and then tampering is attempted.
 
 The difficulty level of the blockchain is set low to make sure that the mining process is achievable in a very short time on a modern PC. However, the difficulty can scale up as far as it needs to - this is why it requires massive powerful machines to mine Bitcoin. (In Bitcoin, there are extra algorithms in place that regulate the network difficulty *based on the speed of successful block mining* - this ensures that the rate of valid block generation remains *roughly* constant over time. As more and more people with extremely powerful hashing systems came online, the difficulty of the network adapted to keep the generation rate constant - this is why it's all but impossible to successfully mine Bitcoin using only a CPU or a small GPU today.)
