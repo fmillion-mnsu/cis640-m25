@@ -6,6 +6,7 @@
 * Assignments:
   * Individual assignments:
     * [Assignment 1: MongoDB Querying](I_ASSIGN1.md)
+    * **[Research Assignment](RESEARCH.md)**
   * **[Course Capstone Project](G_PROJECT.md)**
 * Resources
     * [W3Schools SQL tutorial](https://www.w3schools.com/sql/)
