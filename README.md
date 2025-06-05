@@ -9,5 +9,9 @@
     * **[Research Assignment](RESEARCH.md)**
   * **[Course Capstone Project](G_PROJECT.md)**
 * Resources
-    * [W3Schools SQL tutorial](https://www.w3schools.com/sql/)
-    * [Blockchain - example in Python](blockchain/) - In this repository.
+  * [W3Schools SQL tutorial](https://www.w3schools.com/sql/)
+  * [Blockchain - example in Python](blockchain/) - In this repository.
+* Database Guides:
+  * [Using Python in Microsoft SQL Server](mssql/PYTHON-IN-MSSQL.md)
+  * [Linked Servers - from Microsoft SQL Server to MongoDB](mssql/LINKED-MONGO-POLYBASE.md)
+  * [Linked Servers - from Microsoft SQL Server to Oracle](mssql/LINKED-ORACLE-POLYBASE.md)
