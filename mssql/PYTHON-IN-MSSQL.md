@@ -34,7 +34,7 @@ EXEC sp_execute_external_script
         OutputDataSet = InputDataSet
     ',
     @input_data_1 = N'SELECT columns FROM table'
-    WITH RESULT SETS ((column_definitions));
+    WITH RESULT SETS ((<column_definitions>));
 ```
 
 Let's go over this script...
@@ -44,6 +44,8 @@ Let's go over this script...
   * `@language`: The language to use. For us, it's `Python`. The `R` language is also supported on some setups.
   * `@script`: The literal text of your Python script. This can be inserted directly as seen here, or it could even come as the result of a database query!
 * The `@input_data_1` parameter contains the string representation of an SQL query. The results of this query will be available to the Python script.
+* The `<column_definitions>` MUST be replaced with the actual list of columns your script returns, including the data types. This looks exactly like the columns in a `CREATE TABLE` statement.
+  * There is no way to *fully automate* this process - to create a "generic" copy-input-to-output script. However, you can use SQL Server's ability to generate `CREATE` scripts to quickly discover the exact types of each field of your input table.
 
 As you may have noticed the `InputDataSet` variable contains the entire result from the input data, and the script expects you to set `OutputDataSet` if you want to return tabular data.
 
@@ -195,41 +197,41 @@ BEGIN
     EXEC sp_execute_external_script
         @language = N'Python',
         @script = N'
-    import pandas as pd
-    from datetime import datetime
+import pandas as pd
+from datetime import datetime
 
-    def calculate_age(birth_date):
-        """Calculates a person''s age given a birthdate"""
-        today = datetime.now().date()
+def calculate_age(birth_date):
+    """Calculates a person''s age given a birthdate"""
+    today = datetime.now().date()
 
-        # This lets us accept both strings in Y-m-d format as well as datetime objects.
-        if isinstance(birth_date, str):
-            birth_date = datetime.strptime(birth_date, "%Y-%m-%d").date()
-        elif hasattr(birth_date, "date"):
-            birth_date = birth_date.date()
-        
-        age = today.year - birth_date.year
-        if today.month < birth_date.month or (today.month == birth_date.month and today.day < birth_date.day):
-            age -= 1
-        return age
+    # This lets us accept both strings in Y-m-d format as well as datetime objects.
+    if isinstance(birth_date, str):
+        birth_date = datetime.strptime(birth_date, "%Y-%m-%d").date()
+    elif hasattr(birth_date, "date"):
+        birth_date = birth_date.date()
+    
+    age = today.year - birth_date.year
+    if today.month < birth_date.month or (today.month == birth_date.month and today.day < birth_date.day):
+        age -= 1
+    return age
 
-    # Generate a dataframe that will contain the results
-    result_df = pd.DataFrame()
-    result_df["id"] = InputDataSet["id"]
-    result_df["fullName"] = InputDataSet["lastName"] + ", " + InputDataSet["firstName"] 
-    result_df["age"] = InputDataSet["dateOfBirth"].apply(calculate_age)
+# Generate a dataframe that will contain the results
+result_df = pd.DataFrame()
+result_df["id"] = InputDataSet["id"]
+result_df["fullName"] = InputDataSet["lastName"] + ", " + InputDataSet["firstName"] 
+result_df["age"] = InputDataSet["dateOfBirth"].apply(calculate_age)
 
-    # Set the output to the dataframe - the values will be computed before returning
-    OutputDataSet = result_df
-    ',
-        @input_data_1 = N'SELECT id, firstName, lastName, dateOfBirth FROM Users',
-        @input_data_1_name = N'InputDataSet',
-        @output_data_1_name = N'OutputDataSet'
-    WITH RESULT SETS ((
-        id INT,
-        fullName NVARCHAR(255),
-        age INT
-    ));
+# Set the output to the dataframe - the values will be computed before returning
+OutputDataSet = result_df
+',
+    @input_data_1 = N'SELECT id, firstName, lastName, dateOfBirth FROM Users',
+    @input_data_1_name = N'InputDataSet',
+    @output_data_1_name = N'OutputDataSet'
+WITH RESULT SETS ((
+    id INT,
+    fullName NVARCHAR(255),
+    age INT
+));
 END
 ```
 
