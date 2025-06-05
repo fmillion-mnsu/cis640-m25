@@ -31,7 +31,7 @@ You have two options for your topic:
 
     > Try to focus on organizations that offer software-based services, such as desktop, mobile or Web applications. Considering the data model for a small local one-person business is likely too narrow in scope.
     >
-    > On the other hand, you do not need to focus on an *entire* organization's data systems; you can (and should) instead focus on one particular application or service. For example, you do not need to think about how *Microsoft Corporation*'s entire database system is structured, but you *could* consider the data model for Minecraft Realms, one service among thousands offered by Microsoft (via Mojang).
+    > On the other hand, you do not need to focus on an *entire* organization's data systems; you can (and should) instead focus on one particular application or service. For example, you do not need to think about how *Microsoft Corporation*'s entire database system is structured, but you *could* consider the data model for Minecraft Realms, one service among thousands offered by Microsoft (via Mojang). You should consider all aspects of the one application - for example, for Minecraft Realms you would want to consider user accounts, social media presence, server resources, etc. for Realms - you can essentially imagine that the company *only* provides the service or application you are researching.
     >
     > If you are unsure of scope, please reach out to me!
     
