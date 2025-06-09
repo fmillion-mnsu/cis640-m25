@@ -69,8 +69,7 @@ Your Python code should leverage Python's strengths rather than simply replicati
 Your submission should consist of:
 
 * A single SQL script file (.sql) containing all your Python-in-SQL code with clear comments
-* Sample output demonstrating that your solutions work correctly
-* File naming: `LastName_FirstName_PythonSQL.sql`
+* Sample output demonstrating that your solutions work correctly - a CSV or Excel file is the best approach!
 
 This assignment is individual work. Each student must work independently and submit their own original solution.
 
@@ -80,7 +79,6 @@ This submission is due on **June 20th, 2025** at 11:59 PM.
 
 This project will be graded as follows:
 
-|-|-|
 | Item | Percentage |
 |-|-|
 | Technical execution - Code works, results are accurate | 60% |
