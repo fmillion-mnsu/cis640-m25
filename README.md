@@ -6,6 +6,7 @@
 * Assignments:
   * Individual assignments:
     * [Assignment 1: MongoDB Querying](I_ASSIGN1.md)
+    * [Assignment 2: Python in MSSQL](I_ASSIGN2.md)
     * **[Research Assignment](RESEARCH.md)**
   * **[Course Capstone Project](G_PROJECT.md)**
 * Resources
