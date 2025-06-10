@@ -2,6 +2,15 @@
 
 [Polybase](https://learn.microsoft.com/en-us/sql/relational-databases/polybase/polybase-guide?view=sql-server-ver16) is a feature that is similar to linked servers but is even more tightly integrated into SQL Server. With Polybase, you can directly access tables in Oracle, MongoDB, Hadoop, and even sources like generic S3 storage. These remote sources appear as normal "tables" in SQL Server, and you can query them as such - even including them in `JOIN`s!
 
+> **Enabling PolyBase**
+>
+> In order to use PolyBase, you must first **enable** it. Run these commands on your SQL server:
+>
+>     exec sp_configure @configname = 'polybase enabled', @configvalue = 1;
+>     RECONFIGURE;
+>
+> You should only need to run this one time per server. 
+
 The easiest way to generate the external tables is by using [Azure Data Studio](https://azure.microsoft.com/en-us/products/data-studio). The latest versions of SQL Server Management Studio (SSMS) install Azure Data Studio along with SSMS by default, so you may already have ADS on your system. However, if you find you need to isntall it, you can do so by [downloading it using this link](https://go.microsoft.com/fwlink/?linkid=2231303) and installing it.
 
 **The steps for connecting to Oracle tables using Azure Data Studio are as follows:**
